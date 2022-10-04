@@ -1,0 +1,5 @@
+// 가장 최근에 들어온 동물은 언제 들어왔는지 조회하는 SQL 문을 작성해주세요.
+// datetime 값이 가장 크다는 것은 가장 늦게 들어왔다는 의미
+
+SELECT datetime FROM animal_ins
+WHERE datetime = (SELECT MAX(datetime) FROM animal_ins)
