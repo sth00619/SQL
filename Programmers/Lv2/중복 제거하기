@@ -1,0 +1,4 @@
+// 동물 보호소에 들어온 동물의 이름은 몇 개인지 조회하는 SQL 문을 작성해주세요. 이때 이름이 NULL인 경우는 집계하지 않으며 중복되는 이름은 하나로 칩니다.
+
+// NULL이지 않으면서 중복되지 않은 이름을 구하라는 뜻은 DISTINCT를 사용하여 수를 계산하라는 의미이다.
+SELECT COUNT(DISTINCT(name)) FROM animal_ins;
