@@ -1,0 +1,13 @@
+// 동물 보호소에 들어온 동물 이름 중 두 번 이상 쓰인 이름과 해당 이름이 쓰인 횟수를 조회하는 SQL문을 작성해주세요. 
+// 이때 결과는 이름이 없는 동물은 집계에서 제외하며, 결과는 이름 순으로 조회해주세요.
+
+// 이름과 이름이 쓰인 횟수를 구하기 위해서는 이름별로 그룹을 묶어야한다.
+// 또한 이름이 없는 동물은 제외하고 두 번 이상 이름이 쓰인 동물을 호출해야한다는 조건을 잘 고려해 주어야한다.
+
+SELECT NAME
+      ,COUNT(NAME) AS COUNT
+  FROM ANIMAL_INS
+ WHERE NAME IS NOT NULL
+ GROUP BY NAME 
+       HAVING COUNT(NAME) > 1
+ ORDER BY NAME;
