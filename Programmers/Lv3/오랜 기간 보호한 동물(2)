@@ -1,0 +1,8 @@
+// 보호한 기간을 구하기 위해서는 동물 보호소에서 나간 시각에서 동물 보호소에 들어온 시각의 차를 구하면 된다.
+// 두 값을 뺀 값이 제일 큰 순서대로 정렬하고 상위 2개의 값만 보여주면 되는 문제
+
+SELECT A.ANIMAL_ID, A.NAME 
+FROM ANIMAL_INS AS A, ANIMAL_OUTS AS B 
+WHERE A.ANIMAL_ID = B.ANIMAL_ID 
+ORDER BY B.DATETIME - A.DATETIME 
+DESC LIMIT 2
