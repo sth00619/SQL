@@ -1,0 +1,7 @@
+// 날짜 데이터에서 월을 출력하는 방법을 묻는 문제
+// RDBMS 유형에 따라 '같다'와 '같지 않다'를 구하는 방식이 다르다.
+
+SELECT member_id, member_name, gender, date_of_birth
+FROM member_profile
+WHERE gender = 'W' and tlno is not null and MONTH(DATE_OF_BIRTH)=3
+ORDER BY member_id
