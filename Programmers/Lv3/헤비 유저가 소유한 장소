@@ -1,0 +1,15 @@
+// 이 서비스에서는 공간을 둘 이상 등록한 사람을 "헤비 유저"라고 부릅니다. 
+// 헤비 유저가 등록한 공간의 정보를 아이디 순으로 조회하는 SQL문을 작성해주세요.
+
+// 공간을 둘 이상을 등록했다는 것은 HOST_ID가 두 번 이상 존재했다는 뜻
+// HOST_ID로 GROUPING하여 공간을 두 개 이상 등록한 유저의 공간 정보를 ID 순으로 조회한다.
+// HOST_ID와 ID를 혼동하지 말 것
+
+SELECT id, name, host_id
+FROM places
+WHERE HOST_ID IN(
+SELECT HOST_ID FROM PLACES
+GROUP BY HOST_ID
+HAVING COUNT(ID) >= 2
+)
+ORDER BY HOST_ID ASC
