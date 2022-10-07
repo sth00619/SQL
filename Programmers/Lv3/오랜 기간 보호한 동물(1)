@@ -1,3 +1,7 @@
+// ANIMAL_OUTS 테이블은 동물 보호소에서 입양 보낸 동물의 정보를 담은 테이블입니다. 
+// ANIMAL_OUTS 테이블 구조는 다음과 같으며, ANIMAL_ID, ANIMAL_TYPE, DATETIME, NAME, SEX_UPON_OUTCOME는 각각 동물의 아이디, 생물 종, 입양일, 이름, 성별 및 중성화 여부를 나타냅니다. 
+// ANIMAL_OUTS 테이블의 ANIMAL_ID는 ANIMAL_INS의 ANIMAL_ID의 외래 키입니다.
+
 // LEFT JOIN에 관련된 문제
 // 오랜 기간 보호한 동물이라면 동물 보호소에 들어온 기록은 있지만 나간 기록은 없어야 함
 // 또한 두 테이블에서 동시에 조회해야하기 때문에 동물들을 식별하는 기준인 id을 통해서 JOIN의 조건을 걸어준다.
