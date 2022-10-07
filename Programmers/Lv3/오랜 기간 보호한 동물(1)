@@ -1,0 +1,8 @@
+// LEFT JOIN에 관련된 문제
+// 오랜 기간 보호한 동물이라면 동물 보호소에 들어온 기록은 있지만 나간 기록은 없어야 함
+// 또한 두 테이블에서 동시에 조회해야하기 때문에 동물들을 식별하는 기준인 id을 통해서 JOIN의 조건을 걸어준다.
+
+SELECT a.name, a.datetime 
+FROM animal_ins a LEFT JOIN animal_outs b on a.animal_id = b.animal_id
+WHERE b.animal_id is null
+order by datetime limit 3
