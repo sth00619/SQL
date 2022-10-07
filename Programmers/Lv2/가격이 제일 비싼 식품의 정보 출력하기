@@ -1,0 +1,8 @@
+// 상위 n개의 데이터를 출력하기
+// Oracle인 경우 WHERE 절에 rownum <=n
+// MySQL인 경우 WHERE 절에 LIMIT n
+
+SELECT product_id, product_name, product_cd, category, price 
+FROM food_product
+ORDER BY price desc
+LIMIT 1;
